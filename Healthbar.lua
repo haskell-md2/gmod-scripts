@@ -6,10 +6,6 @@ local health_player=nil;
 local sn = 100; 
 
 
-
-
-
-
 function Healthbar_draw()
     if(LocalPlayer():Alive()) then
         health_player=LocalPlayer():Health(); --получаем здоровье игрока
@@ -25,9 +21,6 @@ function Healthbar_draw()
 end
 
 
---sn = Lerp(0.01, sn, health_player);
-
-
 
 local hide = {
 	["CHudHealth"] = true
@@ -36,8 +29,6 @@ local hide = {
 hook.Add( "HUDShouldDraw", "HideHUD", function( name )
 	if ( hide[ name ] ) then return false end
 end )
-
-
 
 
 
