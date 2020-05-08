@@ -11,12 +11,13 @@ function Healthbar_draw()
         health_player=LocalPlayer():Health(); --получаем здоровье игрока
 
         --Рисуем задник
-        surface.SetDrawColor(color1);  --Устанавливаем цвет для задника
+        surface.SetDrawColor(color1); --Устанавливаем цвет для задника
         surface.DrawRect(0, ScrH()-height, widht, height); --Рисуем задник для бара
 
         --Рисуем полоску HP
-        surface.SetDrawColor(color2); --Устанавливаем цвет для полоски
-        surface.DrawRect(5, ScrH()+5-height, widht/100*health_player-10, height-10); --Рисуем полосу здоровья
+        surface.SetDrawColor(color2); --Устанавливаем цвет для задника
+        sn = Lerp(0.01,sn,health_player);
+        surface.DrawRect(5, ScrH()+5-height, widht/100*sn-10, height-10); --Рисуем полосу здоровья
     end
 end
 
